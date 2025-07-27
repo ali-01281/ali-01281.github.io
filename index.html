@@ -228,10 +228,10 @@
             height: auto;
             display: block;
             object-fit: cover;
-            object-position: center 30%; /* Crop from the top */
+            object-position: center 30%;
         }
         
-        /* Experience Section - NEW DESIGN */
+        /* Experience Section */
         .experience-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -352,8 +352,8 @@
         }
 
         .education-logo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: white;
             border-radius: 50%;
             display: flex;
@@ -363,8 +363,8 @@
         }
 
         .education-logo img {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
         }
 
@@ -422,7 +422,7 @@
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -443,8 +443,8 @@
         }
 
         .certification-image {
-            flex: 0 0 180px;
-            height: 180px;
+            flex: 0 0 200px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -466,8 +466,9 @@
 
         .certification-details h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            padding-top: 0.5rem;
         }
 
         .certification-org {
@@ -477,6 +478,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .certification-org i {
@@ -488,14 +490,14 @@
             padding: 0.3rem 1rem;
             border-radius: 20px;
             display: inline-block;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--gray);
             margin-bottom: 1rem;
         }
 
         .certification-details p {
             color: var(--gray);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* Projects Section */
@@ -769,7 +771,7 @@
         </div>
     </section>
 
-    <!-- Experience Section - NEW DESIGN -->
+    <!-- Experience Section - Updated with larger logos -->
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Experience</h2>
@@ -792,7 +794,7 @@
                     </div>
                 </div>
                 
-                <!-- Sprout Experience - UPDATED FILE NAME -->
+                <!-- Sprout Experience -->
                 <div class="experience-item">
                     <div class="experience-logo">
                         <img src="sprout.jpg.png" alt="Sprout">
@@ -830,10 +832,10 @@
                     </div>
                 </div>
                 
-                <!-- A&O Shearman Experience -->
+                <!-- A&O Shearman Experience - Larger logo -->
                 <div class="experience-item">
                     <div class="experience-logo">
-                        <img src="shearman.jpg" alt="A&O Shearman">
+                        <img src="shearman.jpg" alt="A&O Shearman" style="max-height: 180px;">
                     </div>
                     <div class="experience-content">
                         <h3>A&O Shearman - Law Work Experience</h3>
@@ -868,7 +870,7 @@
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education Section - Updated with larger school logo -->
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title">Education</h2>
@@ -885,7 +887,7 @@
                     </div>
                     <div class="education-content">
                         <div class="education-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Ilford, London</p>
+                            <!-- Location removed as requested -->
                             <p><i class="fas fa-calendar"></i> September 2019 - July 2024</p>
                         </div>
                         <div class="education-results">
@@ -990,7 +992,7 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Certifications Section - Updated with correct dates and alignment -->
     <section id="certifications" class="section">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
@@ -1006,7 +1008,7 @@
                             <div class="certification-org">
                                 <i class="fas fa-building"></i> KPMG (Forage Virtual Experience)
                             </div>
-                            <div class="certification-date">May 2024</div>
+                            <div class="certification-date">October 2024</div>
                             <p>Conducted a cyber incident response assessment, evaluating vulnerabilities and proposing mitigation strategies for a simulated breach. Analyzed sales data using Python and Excel, transforming raw data into actionable recommendations. Designed a client-ready presentation to communicate technical findings effectively to executive audiences.</p>
                         </div>
                     </div>
@@ -1021,7 +1023,7 @@
                             <div class="certification-org">
                                 <i class="fas fa-building"></i> Accenture (Forage Virtual Experience)
                             </div>
-                            <div class="certification-date">April 2024</div>
+                            <div class="certification-date">November 2024</div>
                             <p>Completed a simulation focused on advising a social media client as a Data Analyst. Cleaned, modelled, and analyzed 7 datasets to uncover content trends and inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate key insights to both client and internal stakeholders.</p>
                         </div>
                     </div>
@@ -1036,12 +1038,12 @@
                             <div class="certification-org">
                                 <i class="fas fa-laptop-code"></i> Springpod
                             </div>
-                            <div class="certification-date">March 2024</div>
+                            <div class="certification-date">October 2024</div>
                             <p>Gained comprehensive insights into software development practices, algorithmic problem-solving techniques, and cybersecurity fundamentals. Explored real-world applications of computer science across various industries, with practical exercises in coding challenges and security vulnerability analysis.</p>
                         </div>
                     </div>
                     
-                    <!-- Kodeco Certification -->
+                    <!-- Kodeco Certification - Updated description -->
                     <div class="certification-card">
                         <div class="certification-image">
                             <img src="kodeco.png" alt="Kodeco Swift Development Certificate">
@@ -1052,7 +1054,7 @@
                                 <i class="fab fa-apple"></i> Kodeco
                             </div>
                             <div class="certification-date">February 2024</div>
-                            <p>Mastered iOS development fundamentals through Swift Playgrounds, learning variables, objects, and methods. Developed programming logic with if-statements, loops, arrays and dictionaries. Created interactive iOS applications using SwiftUI, implementing UI design principles and adding user interactivity to bring apps to life.</p>
+                            <p>Developed foundations of iOS app development using Swift. Created a fully functional task management application with SwiftUI, implementing core programming concepts including variables, conditionals, loops, and data structures. Designed an intuitive user interface and implemented interactive features to enhance user experience.</p>
                         </div>
                     </div>
                 </div>
@@ -1060,7 +1062,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Updated with requested changes -->
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Skills</h2>
@@ -1071,7 +1073,7 @@
                             <i class="fab fa-swift"></i>
                         </div>
                         <h3>iOS Development</h3>
-                        <p>Swift, UIKit, SwiftUI</p>
+                        <p>Swift, SwiftUI</p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-icon">
@@ -1079,13 +1081,6 @@
                         </div>
                         <h3>Web Development</h3>
                         <p>HTML, CSS, JavaScript</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Database</h3>
-                        <p>MySQL, MongoDB</p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-icon">
@@ -1100,13 +1095,6 @@
                         </div>
                         <h3>AI Concepts</h3>
                         <p>Machine Learning Basics</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3>UI/UX Design</h3>
-                        <p>Figma, Adobe XD</p>
                     </div>
                 </div>
             </div>
