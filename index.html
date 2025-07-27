@@ -212,7 +212,6 @@
             color: var(--gray);
         }
 
-        /* PROFILE PICTURE FIX */
         .about-image {
             position: relative;
             border-radius: 10px;
@@ -232,124 +231,89 @@
             object-position: center 30%; /* Crop from the top */
         }
         
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            max-width: 800px;
+        /* Experience Section - NEW DESIGN */
+        .experience-container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--light-gray);
-            left: 50%;
-            transform: translateX(-50%);
+        .experience-item {
+            display: flex;
+            margin-bottom: 4rem;
+            align-items: center;
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            width: 100%;
+        .experience-item:nth-child(odd) {
+            flex-direction: row;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
-            padding-left: 4rem;
-            padding-right: 0;
-            text-align: left;
+        .experience-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: auto;
-            padding-right: 4rem;
-            padding-left: 0;
-            text-align: right;
+        .experience-logo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
         }
 
-        .timeline-content {
-            width: 45%;
+        .experience-logo img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-content {
+            flex: 1;
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             position: relative;
+            z-index: 1;
         }
 
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            top: 30px;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -60px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -60px;
-        }
-
-        .company-logo {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            overflow: hidden;
-            top: -35px;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .timeline-item:nth-child(odd) .company-logo {
-            right: -35px;
-        }
-
-        .timeline-item:nth-child(even) .company-logo {
-            left: -35px;
-        }
-
-        .company-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .timeline-content h3 {
+        .experience-content h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            padding-right: 40px;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
         }
 
-        .timeline-item:nth-child(even) .timeline-content h3 {
-            padding-right: 0;
-            padding-left: 40px;
-        }
-
-        .timeline-date {
+        .experience-date {
             display: inline-block;
             background: var(--light-gray);
-            padding: 0.3rem 1rem;
+            padding: 0.4rem 1.2rem;
             border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--gray);
+            font-weight: 500;
         }
 
-        .timeline-content ul {
-            padding-left: 1.5rem;
+        .experience-content ul {
+            padding-left: 1.8rem;
             margin-top: 1rem;
         }
 
-        .timeline-content li {
-            margin-bottom: 0.5rem;
+        .experience-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .experience-content li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
         }
 
         /* Education Section */
@@ -637,33 +601,13 @@
                 grid-template-columns: 1fr;
             }
             
-            .timeline::before {
-                left: 30px;
+            .experience-item {
+                flex-direction: column !important;
+                gap: 2rem;
             }
             
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                width: 100%;
-                padding: 2rem;
-                padding-left: 4rem;
-                text-align: left;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -25px;
-                top: 30px;
-            }
-
-            .timeline-item:nth-child(odd) .company-logo,
-            .timeline-item:nth-child(even) .company-logo {
-                left: -35px;
-                right: auto;
-            }
-            
-            .timeline-content h3 {
-                padding-right: 0;
-                padding-left: 40px;
+            .experience-logo img {
+                max-width: 150px;
             }
         }
 
@@ -752,19 +696,19 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - NEW DESIGN -->
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Experience</h2>
-            <div class="timeline">
+            <div class="experience-container">
                 <!-- Cisco Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <img src="cisco.jpg" alt="Cisco">
-                        </div>
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="cisco.jpg" alt="Cisco">
+                    </div>
+                    <div class="experience-content">
                         <h3>Cisco Technology Work Experience</h3>
-                        <span class="timeline-date">February 2023</span>
+                        <span class="experience-date">July 2025</span>
                         <ul>
                             <li>Joined a cross functional team to design an inclusive tech solution from the ground up</li>
                             <li>Drafted a full product proposal covering overview, market analysis, financial projections, competitor review and project timeline</li>
@@ -776,13 +720,13 @@
                 </div>
                 
                 <!-- Sprout Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <img src="sprout.jpg" alt="Sprout">
-                        </div>
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="sprout.jpg" alt="Sprout">
+                    </div>
+                    <div class="experience-content">
                         <h3>Sprout Software Tester</h3>
-                        <span class="timeline-date">May 2023</span>
+                        <span class="experience-date">June 2025</span>
                         <ul>
                             <li>Gained a strong foundation in automation testing, learning how scripts and tools are used to streamline quality assurance in real world systems</li>
                             <li>Collaborated in real time with a team of testers in a live product environment, mirroring professional QA workflows</li>
@@ -796,13 +740,13 @@
                 </div>
                 
                 <!-- Kainos Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <img src="kainos.jpg" alt="Kainos">
-                        </div>
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="kainos.jpg" alt="Kainos">
+                    </div>
+                    <div class="experience-content">
                         <h3>Kainos CodeCamp</h3>
-                        <span class="timeline-date">April 2023</span>
+                        <span class="experience-date">June 2025</span>
                         <ul>
                             <li>Collaborated in a team of four to design and build a multi page website using Java, HTML and CSS, from wireframe to working prototype</li>
                             <li>Led the group's final presentation outlining our site's features, development process and key learnings to a panel of Kainos professionals</li>
@@ -814,13 +758,13 @@
                 </div>
                 
                 <!-- A&O Shearman Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <img src="shearman.jpg" alt="A&O Shearman">
-                        </div>
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="shearman.jpg" alt="A&O Shearman">
+                    </div>
+                    <div class="experience-content">
                         <h3>A&O Shearman - Law Work Experience</h3>
-                        <span class="timeline-date">June 2023</span>
+                        <span class="experience-date">May 2025</span>
                         <ul>
                             <li>Despite my passion for technology, I wanted to explore legal sector to understand how tech is transforming other industries, gaining insight into A&O Shearman's use of AI across legal processes</li>
                             <li>Discovered how A&O Shearman integrates its very own AI (called Harvey) into its legal processes, including due diligence and contract review, showcasing the firm's strong commitment to innovation</li>
@@ -833,13 +777,13 @@
                 </div>
                 
                 <!-- Deutsche Bank Experience -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <img src="deutsche.jpg" alt="Deutsche Bank">
-                        </div>
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="deutsche.jpg" alt="Deutsche Bank">
+                    </div>
+                    <div class="experience-content">
                         <h3>Deutsche Bank Work Experience</h3>
-                        <span class="timeline-date">July 2023</span>
+                        <span class="experience-date">February 2025</span>
                         <ul>
                             <li>Achieved 1st Place in a stock market trading simulation, where my team analysed live market data to make buy/sell decisions under time constraints, generating the highest profit recorded in the program's history</li>
                             <li>Collaborated in a team to assess live market scenarios, applying critical thinking to assess risks and teamwork to optimise workflow efficiency</li>
