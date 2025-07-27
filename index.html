@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your GitHub Portfolio</title>
+    <title>Ali Adnan - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -59,10 +59,6 @@
             font-weight: 800;
             font-size: 1.8rem;
             color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--accent);
         }
 
         .nav-links {
@@ -336,6 +332,141 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-header {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .education-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .education-logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .education-header-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .education-header-text p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .education-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .education-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .education-details i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
+        .education-results {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .education-results h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certification-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-org {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .certification-date {
+            background: var(--light-gray);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .certification-card p {
+            color: var(--gray);
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -524,7 +655,9 @@
                 margin-left: 0;
             }
             
-            .projects-grid {
+            .projects-grid,
+            .education-grid,
+            .certifications-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -535,12 +668,14 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Portfolio<span>.</span></div>
+                <div class="logo">Ali Adnan</div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#skills">Skills</a></li>
                 </ul>
             </nav>
@@ -551,9 +686,9 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-tag">Aspiring Tech Professional</span>
-                <h1>Christabel <span>Johnson</span></h1>
-                <p>Web Developer & Designer passionate about creating innovative solutions that bridge technology and user experience. Currently exploring new skills and developing projects during my gap year.</p>
+                <span class="hero-tag">Aspiring Technology Degree Apprentice</span>
+                <h1>Ali <span>Adnan</span></h1>
+                <p>Passionate about software development, cybersecurity, and creating solutions that solve real-world problems. Currently developing skills and gaining experience to launch my career in technology.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn">View Projects</a>
                     <a href="#contact" class="btn btn-outline">Contact Me</a>
@@ -568,14 +703,14 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Aspiring Technology Degree Apprentice</h3>
-                    <p>I'm an aspiring technology degree apprentice with a strong interest in software engineering and AI. Currently on a gap year, I am exploring new skills and developing projects to enhance my technical abilities.</p>
-                    <p>Graphic design has been a passion and hobby of mine from a young age. Now, I am expanding my technical skills by bringing my designs to life through code.</p>
-                    <p>I have university offers from UCL, Kings College London, and more, however, I desire to launch my technology career through a degree apprenticeship, allowing me to build a strong foundation in the industry.</p>
+                    <h3>Building the Future with Technology</h3>
+                    <p>I'm an aspiring technology degree apprentice with a strong interest in software, security, and problem-solving at scale. Currently in Year 12, I'm spending my time developing real projects, gaining experience, and preparing for my future.</p>
+                    <p>My goal is to grow into someone who doesn't just understand how technology works, but uses it to make a real impact. I'm passionate about learning new technologies and applying them to create innovative solutions.</p>
+                    <p>When I'm not coding, you can find me exploring cybersecurity concepts, learning about AI, or designing intuitive user experiences that bridge technology and people.</p>
                     <a href="#experience" class="btn">My Experience</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Profile Image">
+                    <img src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Ali Adnan">
                 </div>
             </div>
         </div>
@@ -601,9 +736,109 @@
                         <h3>HSBC LIFT - Global Banking and Markets</h3>
                         <span class="timeline-date">July 2023 - July 2024</span>
                         <ul>
-                            <li>Gai ned in-depth exposure to the Global Banking & Markets division, developing an understanding of global economic trends and industry-specific operations.</li>
+                            <li>Gained in-depth exposure to the Global Banking & Markets division, developing an understanding of global economic trends and industry-specific operations.</li>
                             <li>Coded a team presentation on ESG in Technology demonstration.</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Sprout - Software Tester</h3>
+                        <span class="timeline-date">May 2023</span>
+                        <ul>
+                            <li>Performed comprehensive testing on mobile applications to identify bugs and usability issues.</li>
+                            <li>Documented and reported defects using JIRA, providing detailed reproduction steps.</li>
+                            <li>Collaborated with developers to ensure timely resolution of issues.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Kainos - CodeCamp</h3>
+                        <span class="timeline-date">April 2023</span>
+                        <ul>
+                            <li>Participated in an intensive coding bootcamp focused on web development fundamentals.</li>
+                            <li>Developed a responsive website using HTML, CSS, and JavaScript.</li>
+                            <li>Learned agile development methodologies through team-based projects.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cisco - Networking Academy</h3>
+                        <span class="timeline-date">February 2023</span>
+                        <ul>
+                            <li>Completed Cisco Networking Academy modules on networking fundamentals.</li>
+                            <li>Gained hands-on experience configuring routers and switches.</li>
+                            <li>Learned about network security principles and best practices.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="education-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Beal_High_School_logo.svg/1200px-Beal_High_School_logo.svg.png" alt="Beal High School">
+                        </div>
+                        <div class="education-header-text">
+                            <h3>Beal High School</h3>
+                            <p>GCSEs • 2019-2024</p>
+                        </div>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Ilford, London</p>
+                            <p><i class="fas fa-calendar"></i> September 2019 - July 2024</p>
+                        </div>
+                        <div class="education-results">
+                            <h4>GCSE Results:</h4>
+                            <p>• Mathematics: 8</p>
+                            <p>• Computer Science: 9</p>
+                            <p>• English Language: 7</p>
+                            <p>• English Literature: 7</p>
+                            <p>• Physics: 8</p>
+                            <p>• Chemistry: 8</p>
+                            <p>• Biology: 8</p>
+                            <p>• Religious Studies: 8</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="education-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Beal_High_School_logo.svg/1200px-Beal_High_School_logo.svg.png" alt="Beal Sixth Form">
+                        </div>
+                        <div class="education-header-text">
+                            <h3>Beal Sixth Form</h3>
+                            <p>A-Levels • 2024-Present</p>
+                        </div>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Ilford, London</p>
+                            <p><i class="fas fa-calendar"></i> September 2024 - Present</p>
+                        </div>
+                        <div class="education-results">
+                            <h4>A-Level Subjects:</h4>
+                            <p>• Mathematics</p>
+                            <p>• Computer Science</p>
+                            <p>• Biology</p>
+                        </div>
+                        <div class="education-results">
+                            <h4>Predicted Grades:</h4>
+                            <p>• Mathematics: A*</p>
+                            <p>• Computer Science: A*</p>
+                            <p>• Biology: A</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -616,7 +851,23 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" style="background: linear-gradient(45deg, #FF9A8B, #FF6B6B);">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Carrot Chase! (iOS Game)</h3>
+                        <p>A fun iOS game where players navigate a rabbit through challenging mazes to find its carrot. Developed using Swift and SpriteKit.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Swift</span>
+                            <span class="project-tag">SpriteKit</span>
+                            <span class="project-tag">iOS</span>
+                            <span class="project-tag">Game Development</span>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(45deg, #4FACFE, #00F2FE);">
                         <i class="fas fa-tasks"></i>
                     </div>
                     <div class="project-content">
@@ -631,7 +882,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" style="background: linear-gradient(45deg, #42E695, #3BB2B8);">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="project-content">
@@ -645,20 +896,38 @@
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Design Portfolio</h3>
-                        <p>Collection of graphic design projects including branding, UI/UX design, and illustrations.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Figma</span>
-                            <span class="project-tag">Illustrator</span>
-                            <span class="project-tag">Photoshop</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3>Introduction to Cybersecurity</h3>
+                    <div class="certification-org">Cisco Networking Academy</div>
+                    <div class="certification-date">March 2023</div>
+                    <p>Completed comprehensive training on cybersecurity fundamentals, threats, and defense strategies.</p>
+                </div>
+                <div class="certification-card">
+                    <h3>Python Programming</h3>
+                    <div class="certification-org">Forage Virtual Experience</div>
+                    <div class="certification-date">April 2023</div>
+                    <p>Developed practical Python skills through real-world coding challenges and projects.</p>
+                </div>
+                <div class="certification-card">
+                    <h3>Web Development Fundamentals</h3>
+                    <div class="certification-org">Kainos CodeCamp</div>
+                    <div class="certification-date">May 2023</div>
+                    <p>Learned modern web development techniques including HTML5, CSS3, and JavaScript.</p>
+                </div>
+                <div class="certification-card">
+                    <h3>Swift Programming</h3>
+                    <div class="certification-org">Apple Developer Academy</div>
+                    <div class="certification-date">June 2023</div>
+                    <p>Mastered iOS development with Swift through building practical applications.</p>
                 </div>
             </div>
         </div>
@@ -667,36 +936,50 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Education & Skills</h2>
+            <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skills-grid">
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <i class="fas fa-laptop-code"></i>
+                            <i class="fab fa-swift"></i>
+                        </div>
+                        <h3>iOS Development</h3>
+                        <p>Swift, UIKit, SwiftUI</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
                         </div>
                         <h3>Web Development</h3>
-                        <p>HTML, CSS, JavaScript, React</p>
+                        <p>HTML, CSS, JavaScript</p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-icon">
                             <i class="fas fa-database"></i>
                         </div>
                         <h3>Database</h3>
-                        <p>MySQL, MongoDB, Database Design</p>
+                        <p>MySQL, MongoDB</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Fundamentals, Networking</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI Concepts</h3>
+                        <p>Machine Learning Basics</p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-icon">
                             <i class="fas fa-paint-brush"></i>
                         </div>
                         <h3>UI/UX Design</h3>
-                        <p>Figma, Adobe Creative Suite</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Education</h3>
-                        <p>A-Levels: Computer Science, Maths, Design</p>
+                        <p>Figma, Adobe XD</p>
                     </div>
                 </div>
             </div>
@@ -708,16 +991,15 @@
         <div class="container">
             <div class="footer-content">
                 <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations or just a friendly hello</p>
+                <p>Feel free to reach out for collaborations or opportunities</p>
                 
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/ali-01281" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aliadnan012/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:aliadnan3112@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
                 
-                <p class="copyright">© 2024 Christabel Johnson. All rights reserved.</p>
+                <p class="copyright">© 2024 Ali Adnan. All rights reserved.</p>
             </div>
         </div>
     </footer>
