@@ -260,11 +260,14 @@
         }
 
         .experience-logo img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 50%;
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            border-radius: 12px;
             border: 5px solid white;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background: white;
+            padding: 12px;
         }
 
         .experience-content {
@@ -349,19 +352,19 @@
         }
 
         .education-logo {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
         }
 
         .education-logo img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
 
@@ -399,6 +402,7 @@
             background: var(--light);
             padding: 1rem;
             border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
         .education-results h4 {
@@ -406,11 +410,20 @@
             color: var(--dark);
         }
 
+        .education-results p {
+            margin-bottom: 0.3rem;
+        }
+
         /* Certifications Section */
+        .certifications-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
@@ -420,21 +433,54 @@
             padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
         }
 
         .certification-card:hover {
             transform: translateY(-5px);
         }
 
-        .certification-card h3 {
+        .certification-image {
+            flex: 0 0 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+        }
+
+        .certification-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .certification-details {
+            flex: 1;
+        }
+
+        .certification-details h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
 
         .certification-org {
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .certification-org i {
+            color: var(--accent);
         }
 
         .certification-date {
@@ -447,8 +493,9 @@
             margin-bottom: 1rem;
         }
 
-        .certification-card p {
+        .certification-details p {
             color: var(--gray);
+            line-height: 1.5;
         }
 
         /* Projects Section */
@@ -607,7 +654,12 @@
             }
             
             .experience-logo img {
-                max-width: 150px;
+                width: 200px;
+                height: 200px;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -638,6 +690,27 @@
             
             .about-image {
                 max-width: 300px;
+            }
+
+            .certification-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .certification-image {
+                width: 100%;
+                max-width: 180px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certification-card {
+                padding: 1rem;
             }
         }
     </style>
@@ -719,10 +792,10 @@
                     </div>
                 </div>
                 
-                <!-- Sprout Experience -->
+                <!-- Sprout Experience - UPDATED FILE NAME -->
                 <div class="experience-item">
                     <div class="experience-logo">
-                        <img src="sprout.jpg" alt="Sprout">
+                        <img src="sprout.jpg.png" alt="Sprout">
                     </div>
                     <div class="experience-content">
                         <h3>Sprout Software Tester</h3>
@@ -803,7 +876,7 @@
                 <div class="education-card">
                     <div class="education-header">
                         <div class="education-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Beal_High_School_logo.svg/1200px-Beal_High_School_logo.svg.png" alt="Beal High School">
+                            <img src="bealhigh.jpg" alt="Beal High School">
                         </div>
                         <div class="education-header-text">
                             <h3>Beal High School</h3>
@@ -817,14 +890,15 @@
                         </div>
                         <div class="education-results">
                             <h4>GCSE Results:</h4>
+                            <p>• English Literature: 9</p>
+                            <p>• English Language: 8</p>
                             <p>• Mathematics: 8</p>
-                            <p>• Computer Science: 9</p>
-                            <p>• English Language: 7</p>
-                            <p>• English Literature: 7</p>
-                            <p>• Physics: 8</p>
-                            <p>• Chemistry: 8</p>
                             <p>• Biology: 8</p>
-                            <p>• Religious Studies: 8</p>
+                            <p>• Chemistry: 8</p>
+                            <p>• Computer Science: 7</p>
+                            <p>• Geography: 7</p>
+                            <p>• Physics: 6</p>
+                            <p>• Economics: 6</p>
                         </div>
                     </div>
                 </div>
@@ -832,7 +906,7 @@
                 <div class="education-card">
                     <div class="education-header">
                         <div class="education-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Beal_High_School_logo.svg/1200px-Beal_High_School_logo.svg.png" alt="Beal Sixth Form">
+                            <img src="bealhigh.jpg" alt="Beal Sixth Form">
                         </div>
                         <div class="education-header-text">
                             <h3>Beal Sixth Form</h3>
@@ -841,7 +915,6 @@
                     </div>
                     <div class="education-content">
                         <div class="education-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Ilford, London</p>
                             <p><i class="fas fa-calendar"></i> September 2024 - Present</p>
                         </div>
                         <div class="education-results">
@@ -854,7 +927,7 @@
                             <h4>Predicted Grades:</h4>
                             <p>• Mathematics: A*</p>
                             <p>• Computer Science: A*</p>
-                            <p>• Biology: A</p>
+                            <p>• Biology: A*</p>
                         </div>
                     </div>
                 </div>
@@ -921,30 +994,67 @@
     <section id="certifications" class="section">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <h3>Introduction to Cybersecurity</h3>
-                    <div class="certification-org">Cisco Networking Academy</div>
-                    <div class="certification-date">March 2023</div>
-                    <p>Completed comprehensive training on cybersecurity fundamentals, threats, and defense strategies.</p>
-                </div>
-                <div class="certification-card">
-                    <h3>Python Programming</h3>
-                    <div class="certification-org">Forage Virtual Experience</div>
-                    <div class="certification-date">April 2023</div>
-                    <p>Developed practical Python skills through real-world coding challenges and projects.</p>
-                </div>
-                <div class="certification-card">
-                    <h3>Web Development Fundamentals</h3>
-                    <div class="certification-org">Kainos CodeCamp</div>
-                    <div class="certification-date">May 2023</div>
-                    <p>Learned modern web development techniques including HTML5, CSS3, and JavaScript.</p>
-                </div>
-                <div class="certification-card">
-                    <h3>Swift Programming</h3>
-                    <div class="certification-org">Apple Developer Academy</div>
-                    <div class="certification-date">June 2023</div>
-                    <p>Mastered iOS development with Swift through building practical applications.</p>
+            <div class="certifications-container">
+                <div class="certifications-grid">
+                    <!-- KPMG Certification -->
+                    <div class="certification-card">
+                        <div class="certification-image">
+                            <img src="kpmg.jpg.jpg" alt="KPMG Cybersecurity Certificate">
+                        </div>
+                        <div class="certification-details">
+                            <h3>KPMG Cybersecurity</h3>
+                            <div class="certification-org">
+                                <i class="fas fa-building"></i> KPMG (Forage Virtual Experience)
+                            </div>
+                            <div class="certification-date">May 2024</div>
+                            <p>Conducted a cyber incident response assessment, evaluating vulnerabilities and proposing mitigation strategies for a simulated breach. Analyzed sales data using Python and Excel, transforming raw data into actionable recommendations. Designed a client-ready presentation to communicate technical findings effectively to executive audiences.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Accenture Certification -->
+                    <div class="certification-card">
+                        <div class="certification-image">
+                            <img src="accenture.jpg.jpg" alt="Accenture Data Analytics Certificate">
+                        </div>
+                        <div class="certification-details">
+                            <h3>Accenture Data Analytics</h3>
+                            <div class="certification-org">
+                                <i class="fas fa-building"></i> Accenture (Forage Virtual Experience)
+                            </div>
+                            <div class="certification-date">April 2024</div>
+                            <p>Completed a simulation focused on advising a social media client as a Data Analyst. Cleaned, modelled, and analyzed 7 datasets to uncover content trends and inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate key insights to both client and internal stakeholders.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Springpod Certification -->
+                    <div class="certification-card">
+                        <div class="certification-image">
+                            <img src="springpod.jpg" alt="Springpod Technology Certificate">
+                        </div>
+                        <div class="certification-details">
+                            <h3>Springpod Technology Program</h3>
+                            <div class="certification-org">
+                                <i class="fas fa-laptop-code"></i> Springpod
+                            </div>
+                            <div class="certification-date">March 2024</div>
+                            <p>Gained comprehensive insights into software development practices, algorithmic problem-solving techniques, and cybersecurity fundamentals. Explored real-world applications of computer science across various industries, with practical exercises in coding challenges and security vulnerability analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Kodeco Certification -->
+                    <div class="certification-card">
+                        <div class="certification-image">
+                            <img src="kodeco.png" alt="Kodeco Swift Development Certificate">
+                        </div>
+                        <div class="certification-details">
+                            <h3>Kodeco Swift Development</h3>
+                            <div class="certification-org">
+                                <i class="fab fa-apple"></i> Kodeco
+                            </div>
+                            <div class="certification-date">February 2024</div>
+                            <p>Mastered iOS development fundamentals through Swift Playgrounds, learning variables, objects, and methods. Developed programming logic with if-statements, loops, arrays and dictionaries. Created interactive iOS applications using SwiftUI, implementing UI design principles and adding user interactivity to bring apps to life.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1016,7 +1126,7 @@
                     <a href="mailto:aliadnan3112@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
                 
-                <p class="copyright">© 2024 Ali Adnan. All rights reserved.</p>
+                <p class="copyright">© 2025 Ali Adnan. All rights reserved.</p>
             </div>
         </div>
     </footer>
