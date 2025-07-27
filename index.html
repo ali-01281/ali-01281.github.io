@@ -297,9 +297,40 @@
             left: -60px;
         }
 
+        .company-logo {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            top: -35px;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(odd) .company-logo {
+            right: -35px;
+        }
+
+        .timeline-item:nth-child(even) .company-logo {
+            left: -35px;
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .timeline-content h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content h3 {
+            padding-right: 0;
+            padding-left: 40px;
         }
 
         .timeline-date {
@@ -623,6 +654,17 @@
                 left: -25px;
                 top: 30px;
             }
+
+            .timeline-item:nth-child(odd) .company-logo,
+            .timeline-item:nth-child(even) .company-logo {
+                left: -35px;
+                right: auto;
+            }
+            
+            .timeline-content h3 {
+                padding-right: 0;
+                padding-left: 40px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -715,56 +757,93 @@
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
+                <!-- Cisco Experience -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Barclays - Virtual Developer</h3>
-                        <span class="timeline-date">October 2024</span>
-                        <ul>
-                            <li>Designed and implemented a database for a To-Do List app, featuring two interconnected tables: users and tasks.</li>
-                            <li>Conducted research to determine the optimal database type, evaluating relational, NoSQL, and in-memory solutions, and justified the selection of MySQL based on scalability and performance.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>HSBC LIFT - Global Banking and Markets</h3>
-                        <span class="timeline-date">July 2023 - July 2024</span>
-                        <ul>
-                            <li>Gained in-depth exposure to the Global Banking & Markets division, developing an understanding of global economic trends and industry-specific operations.</li>
-                            <li>Coded a team presentation on ESG in Technology demonstration.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Sprout - Software Tester</h3>
-                        <span class="timeline-date">May 2023</span>
-                        <ul>
-                            <li>Performed comprehensive testing on mobile applications to identify bugs and usability issues.</li>
-                            <li>Documented and reported defects using JIRA, providing detailed reproduction steps.</li>
-                            <li>Collaborated with developers to ensure timely resolution of issues.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Kainos - CodeCamp</h3>
-                        <span class="timeline-date">April 2023</span>
-                        <ul>
-                            <li>Participated in an intensive coding bootcamp focused on web development fundamentals.</li>
-                            <li>Developed a responsive website using HTML, CSS, and JavaScript.</li>
-                            <li>Learned agile development methodologies through team-based projects.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Cisco - Networking Academy</h3>
+                        <div class="company-logo">
+                            <img src="cisco.jpg" alt="Cisco">
+                        </div>
+                        <h3>Cisco Technology Work Experience</h3>
                         <span class="timeline-date">February 2023</span>
                         <ul>
-                            <li>Completed Cisco Networking Academy modules on networking fundamentals.</li>
-                            <li>Gained hands-on experience configuring routers and switches.</li>
-                            <li>Learned about network security principles and best practices.</li>
+                            <li>Joined a cross functional team to design an inclusive tech solution from the ground up</li>
+                            <li>Drafted a full product proposal covering overview, market analysis, financial projections, competitor review and project timeline</li>
+                            <li>Pitched the concept to a panel of five senior "dragons," refining delivery under pressure</li>
+                            <li>Took part in mock interviews and industry focused workshops to understand success factors in tech careers</li>
+                            <li>Networked across departments—software, sales, logistics—to learn how each function leverages technology for real world impact</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Sprout Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="sprout.jpg" alt="Sprout">
+                        </div>
+                        <h3>Sprout Software Tester</h3>
+                        <span class="timeline-date">May 2023</span>
+                        <ul>
+                            <li>Gained a strong foundation in automation testing, learning how scripts and tools are used to streamline quality assurance in real world systems</li>
+                            <li>Collaborated in real time with a team of testers in a live product environment, mirroring professional QA workflows</li>
+                            <li>Completed structured test cases to verify core website functions, ensuring features performed as expected under various user scenarios</li>
+                            <li>Reported bugs with precision and clarity to help the development team fix high priority issues quickly</li>
+                            <li>Contributed suggestions for new features and design improvements to support long term platform growth</li>
+                            <li>Applied Agile and Waterfall methodologies to understand different approaches to project and product management</li>
+                            <li>Attended live industry sessions with professionals, gaining insight into software testing as a career path</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Kainos Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="kainos.jpg" alt="Kainos">
+                        </div>
+                        <h3>Kainos CodeCamp</h3>
+                        <span class="timeline-date">April 2023</span>
+                        <ul>
+                            <li>Collaborated in a team of four to design and build a multi page website using Java, HTML and CSS, from wireframe to working prototype</li>
+                            <li>Led the group's final presentation outlining our site's features, development process and key learnings to a panel of Kainos professionals</li>
+                            <li>Explored offensive security through hands on exercises in the OWASP Juice Shop: performing SQL injection to bypass logins and demonstrating XSS payloads to expose browser vulnerabilities</li>
+                            <li>Practised defensive techniques by cracking sample password hashes and patching identified flaws, then documented mitigation strategies</li>
+                            <li>Attended workshops on Generative AI, basic cybersecurity principles and agile project management, applying those insights directly into our development and security testing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- A&O Shearman Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="shearman.jpg" alt="A&O Shearman">
+                        </div>
+                        <h3>A&O Shearman - Law Work Experience</h3>
+                        <span class="timeline-date">June 2023</span>
+                        <ul>
+                            <li>Despite my passion for technology, I wanted to explore legal sector to understand how tech is transforming other industries, gaining insight into A&O Shearman's use of AI across legal processes</li>
+                            <li>Discovered how A&O Shearman integrates its very own AI (called Harvey) into its legal processes, including due diligence and contract review, showcasing the firm's strong commitment to innovation</li>
+                            <li>Gained insight into core areas of law, including corporate and commercial law, and how legal teams handle complex client needs</li>
+                            <li>Observed meetings and case preparations, developing an appreciation for the precision and structure behind legal operations</li>
+                            <li>Learned the importance of client confidentiality, professional ethics, and the role of legal research in building strong cases</li>
+                            <li>Networked with legal professionals and trainees, understanding the diverse career paths within a global law firm</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Deutsche Bank Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="deutsche.jpg" alt="Deutsche Bank">
+                        </div>
+                        <h3>Deutsche Bank Work Experience</h3>
+                        <span class="timeline-date">July 2023</span>
+                        <ul>
+                            <li>Achieved 1st Place in a stock market trading simulation, where my team analysed live market data to make buy/sell decisions under time constraints, generating the highest profit recorded in the program's history</li>
+                            <li>Collaborated in a team to assess live market scenarios, applying critical thinking to assess risks and teamwork to optimise workflow efficiency</li>
+                            <li>Gained exposure to investment banking and asset management, interviewing professionals to understand global commodities and algorithmic trading strategies</li>
                         </ul>
                     </div>
                 </div>
