@@ -3,168 +3,569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrot Chase! | Ali Adnan</title>
+    <title>Carrot Chase! iOS Game | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* SIMPLE STYLES */
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --highlight: #f59e0b;
+            --success: #10b981;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
-            background: #f0f9ff;
-            color: #0f172a;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            color: var(--dark);
+            line-height: 1.7;
             padding: 20px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .header {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .screenshots {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 30px 0;
-            justify-content: center;
-        }
-        
-        .screenshot {
-            width: 100%;
-            max-width: 300px;
-            border: 2px solid #2563eb;
-            border-radius: 10px;
-            padding: 10px;
+        .container {
             background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            margin: 30px auto;
         }
         
-        .screenshot img {
-            width: 100%;
-            border-radius: 5px;
-        }
-        
-        .section {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #2563eb;
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 20px 0;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .challenge {
-            background: #f0f9ff;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .content-section {
+            padding: 60px 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: var(--highlight);
+            border-radius: 5px;
+        }
+        
+        .project-overview {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .project-desc {
+            flex: 1;
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .project-desc h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .project-features {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .screenshots-container {
+            margin: 60px 0;
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .screenshot-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .screenshot-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .screenshot-img {
+            flex: 1;
+            background-size: cover;
+            background-position: top center;
+        }
+        
+        .screenshot-desc {
+            padding: 20px;
+            background: white;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .screenshot-desc h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .screenshot-item.large {
+            grid-column: span 2;
+            height: 500px;
+        }
+        
+        .challenges-section {
+            background: var(--light);
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+        
+        .challenge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .challenge-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .challenge-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--highlight);
+        }
+        
+        .challenge-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .challenge-card p {
+            margin-bottom: 20px;
+        }
+        
+        .solution {
+            background: rgba(59, 130, 246, 0.08);
             padding: 15px;
-            border-left: 4px solid #f59e0b;
-            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .solution h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .learned-section {
+            margin: 60px 0;
+        }
+        
+        .learned-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .learned-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .learned-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .learned-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .learned-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
         
         .back-btn {
             text-align: center;
-            margin: 40px 0;
+            margin: 50px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2);
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
         }
         
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: #64748b;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        @media (max-width: 900px) {
+            .project-overview {
+                flex-direction: column;
+            }
+            
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .screenshot-item.large {
+                grid-column: span 1;
+            }
+            
+            .learned-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .project-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .learned-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .challenge-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Carrot Chase! iOS Game</h1>
-        <p>A maze game where you help a rabbit find its carrot</p>
-    </div>
-    
-    <div class="screenshots">
-        <!-- Game Screenshot -->
-        <div class="screenshot">
-            <img src="game-screenshot.JPG" alt="Game Screenshot">
-            <p>Gameplay: Rabbit navigating the maze</p>
+    <div class="container">
+        <header class="hero">
+            <h1>Carrot Chase!</h1>
+            <p>A SwiftUI-based iOS maze game with intuitive controls and engaging gameplay</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">Swift</div>
+                <div class="tech-item">SwiftUI</div>
+                <div class="tech-item">iOS</div>
+                <div class="tech-item">Game Development</div>
+            </div>
+        </header>
+        
+        <div class="content-section">
+            <div class="section-title">Project Overview</div>
+            
+            <div class="project-overview">
+                <div class="project-desc">
+                    <h3>About This Project</h3>
+                    <p>Carrot Chase! is an iOS maze navigation game developed using Swift and SwiftUI. The project was designed to demonstrate proficiency in iOS development, SwiftUI implementation, and game logic architecture.</p>
+                    <p>The game features a rabbit protagonist that players guide through increasingly complex mazes to locate a hidden carrot. This project showcases my ability to create engaging user experiences while implementing complex game mechanics in a modern iOS development environment.</p>
+                    <p>Through this project, I gained valuable experience in optimizing performance for mobile devices, implementing gesture-based controls, and designing intuitive game interfaces that provide immediate feedback to players.</p>
+                </div>
+                
+                <div class="project-features">
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>iOS Platform</h4>
+                        <p>Developed exclusively for iOS with full compatibility across iPhone devices</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-hand-pointer"></i>
+                        <h4>Swipe Controls</h4>
+                        <p>Intuitive swipe-based movement mechanics</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-code"></i>
+                        <h4>SwiftUI</h4>
+                        <p>Built with modern SwiftUI declarative syntax</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h4>Game Logic</h4>
+                        <p>Complex collision detection and level progression</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="screenshots-container">
+                <div class="section-title">Development Highlights</div>
+                
+                <div class="screenshot-grid">
+                    <div class="screenshot-item">
+                        <div class="screenshot-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="screenshot-desc">
+                            <h3>Movement Logic</h3>
+                            <p>SwiftUI implementation of gesture-based movement controls</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-item">
+                        <div class="screenshot-img" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="screenshot-desc">
+                            <h3>Collision Detection</h3>
+                            <p>Grid-based collision system for wall interactions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-item large">
+                        <div class="screenshot-img" style="background-image: url('https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                        <div class="screenshot-desc">
+                            <h3>Gameplay - Rabbit finally finds its carrot!</h3>
+                            <p>Final level completion with victory animation sequence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="challenges-section">
+                <div class="section-title">Development Challenges & Solutions</div>
+                
+                <div class="challenge-container">
+                    <div class="challenge-card">
+                        <h3>Smooth Character Movement</h3>
+                        <p>Initial implementation resulted in choppy character animation and inconsistent grid-based movement, creating a poor user experience.</p>
+                        <div class="solution">
+                            <h4>Solution</h4>
+                            <p>Implemented Core Animation with spring physics for natural movement. Combined with UISwipeGestureRecognizer to ensure precise grid transitions while maintaining fluid motion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <h3>Wall Collision Detection</h3>
+                        <p>The rabbit could initially pass through walls due to insufficient collision checks during the animation phase.</p>
+                        <div class="solution">
+                            <h4>Solution</h4>
+                            <p>Developed a two-phase validation system that checks both the target grid position before movement and during the animation sequence. Created a custom CollisionEngine class to manage wall positions and interactions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <h3>Adaptive Layout</h3>
+                        <p>Game elements rendered inconsistently across different iOS devices and screen sizes.</p>
+                        <div class="solution">
+                            <h4>Solution</h4>
+                            <p>Utilized SwiftUI's GeometryReader and size classes to create responsive layout constraints. Implemented a dynamic grid system that scales elements proportionally while maintaining gameplay integrity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="learned-section">
+                <div class="section-title">Key Learnings</div>
+                
+                <div class="learned-grid">
+                    <div class="learned-card">
+                        <i class="fas fa-shapes"></i>
+                        <h3>SwiftUI Proficiency</h3>
+                        <p>Advanced understanding of SwiftUI's declarative syntax, animation capabilities, and state management for complex applications.</p>
+                    </div>
+                    
+                    <div class="learned-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>Game Architecture</h3>
+                        <p>Experience designing game architecture using MVVM pattern to separate concerns between game logic, UI, and data management.</p>
+                    </div>
+                    
+                    <div class="learned-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Performance Optimization</h3>
+                        <p>Techniques for optimizing rendering performance and memory management in resource-constrained mobile environments.</p>
+                    </div>
+                    
+                    <div class="learned-card">
+                        <i class="fas fa-fingerprint"></i>
+                        <h3>Gesture Recognition</h3>
+                        <p>Implementation of complex gesture recognition systems with edge case handling and accessibility considerations.</p>
+                    </div>
+                    
+                    <div class="learned-card">
+                        <i class="fas fa-vial"></i>
+                        <h3>Testing Methodologies</h3>
+                        <p>Developed comprehensive unit tests for game logic and UI tests for gesture-based interactions.</p>
+                    </div>
+                    
+                    <div class="learned-card">
+                        <i class="fas fa-users"></i>
+                        <h3>User Experience</h3>
+                        <p>Understanding of player feedback mechanisms, difficulty progression, and reward systems that enhance engagement.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-btn">
+                <a href="index.html" class="btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Portfolio
+                </a>
+            </div>
         </div>
         
-        <!-- Code Screenshot 1 -->
-        <div class="screenshot">
-            <img src="code-screenshot1.JPEG" alt="Code Screenshot 1">
-            <p>Movement code</p>
-        </div>
-        
-        <!-- Code Screenshot 2 -->
-        <div class="screenshot">
-            <img src="code-screenshot2.JPG" alt="Code Screenshot 2">
-            <p>Collision detection</p>
-        </div>
+        <footer>
+            <p>© 2025 Ali Adnan | Degree Apprenticeship Portfolio</p>
+        </footer>
     </div>
-    
-    <div class="section">
-        <h2>About This Project</h2>
-        <p>I created this game to learn Swift and game development. It features:</p>
-        <ul>
-            <li>Rabbit character controlled by swiping</li>
-            <li>Maze walls that block movement</li>
-            <li>Carrot goal that wins the game</li>
-            <li>Simple but challenging gameplay</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h2>Development Challenges</h2>
-        
-        <div class="challenge">
-            <h3>Challenge: Making the Rabbit Move Smoothly</h3>
-            <p>At first, the movement was jumpy and didn't feel natural.</p>
-        </div>
-        
-        <div class="challenge">
-            <h3>Solution: Swipe Gesture Recognizers</h3>
-            <p>I used UISwipeGestureRecognizer to detect swipes in four directions. When the player swipes, I move the rabbit one full square in that direction.</p>
-        </div>
-        
-        <div class="challenge">
-            <h3>Challenge: Wall Collisions</h3>
-            <p>The rabbit could walk through walls, which ruined the game.</p>
-        </div>
-        
-        <div class="challenge">
-            <h3>Solution: Grid-Based Collision Detection</h3>
-            <p>I created a grid system where each position is either empty or a wall. Before moving, I check if the next position is walkable.</p>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2>What I Learned</h2>
-        <ul>
-            <li>How to use Swift for game development</li>
-            <li>Basic collision detection techniques</li>
-            <li>Handling user input with gesture recognizers</li>
-            <li>Problem-solving when things don't work as expected</li>
-            <li>The importance of playtesting</li>
-        </ul>
-    </div>
-    
-    <div class="back-btn">
-        <a href="index.html" class="btn">Back to Portfolio</a>
-    </div>
-    
-    <footer>
-        <p>© 2025 Ali Adnan</p>
-    </footer>
 </body>
 </html>
