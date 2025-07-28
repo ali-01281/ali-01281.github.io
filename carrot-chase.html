@@ -491,7 +491,7 @@
                         <p>Initial implementation resulted in incorrect character animation and inconsistent grid-based movement, creating a poor user experience.</p>
                         <div class="solution">
                             <h4>Solution</h4>
-                            <p>Implemented Core Animation with spring physics for natural movement. Combined with UISwipeGestureRecognizer to ensure precise grid transitions while maintaining fluid motion.</p>
+                            <p>Used @State variables playerRow and playerCol to store the player’s position and updated them using directional buttons. Each movement button changed the state by incrementing or decrementing the appropriate coordinate.</p>
                         </div>
                     </div>
                     
@@ -500,7 +500,7 @@
                         <p>The rabbit could initially pass through walls due to insufficient collision checks during the animation phase.</p>
                         <div class="solution">
                             <h4>Solution</h4>
-                            <p>Developed a two-phase validation system that checks both the target grid position before movement and during the animation sequence. Created a custom CollisionEngine class to manage wall positions and interactions.</p>
+                            <p>Created an isValidMove(row:col:) function that checks whether the tile is a valid path or the carrot before allowing the player to move. This function was called before any movement, preventing movement into wall tiles.</p>
                         </div>
                     </div>
                     
@@ -521,38 +521,38 @@
                 <div class="learned-grid">
                     <div class="learned-card">
                         <i class="fas fa-shapes"></i>
-                        <h3>SwiftUI Proficiency</h3>
-                        <p>Advanced understanding of SwiftUI's declarative syntax, animation capabilities, and state management for complex applications.</p>
-                    </div>
-                    
-                    <div class="learned-card">
-                        <i class="fas fa-project-diagram"></i>
-                        <h3>Game Architecture</h3>
-                        <p>Experience designing game architecture using MVVM pattern to separate concerns between game logic, UI, and data management.</p>
-                    </div>
-                    
-                    <div class="learned-card">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <h3>Performance Optimization</h3>
-                        <p>Techniques for optimizing rendering performance and memory management in resource-constrained mobile environments.</p>
-                    </div>
-                    
-                    <div class="learned-card">
-                        <i class="fas fa-fingerprint"></i>
-                        <h3>Gesture Recognition</h3>
-                        <p>Implementation of complex gesture recognition systems with edge case handling and accessibility considerations.</p>
-                    </div>
-                    
-                    <div class="learned-card">
-                        <i class="fas fa-vial"></i>
-                        <h3>Testing Methodologies</h3>
-                        <p>Developed comprehensive unit tests for game logic and UI tests for gesture-based interactions.</p>
-                    </div>
-                    
-                    <div class="learned-card">
-                        <i class="fas fa-users"></i>
-                        <h3>User Experience</h3>
-                        <p>Understanding of player feedback mechanisms, difficulty progression, and reward systems that enhance engagement.</p>
+                            <h3>SwiftUI Proficiency</h3>
+                            <p>Gained experience with SwiftUI's declarative approach to building interfaces, implementing basic animations for character movement, and managing state changes.</p>
+                        </div>
+                        
+                        <div class="learned-card">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>Game Architecture</h3>
+                            <p>Designed with clear separation between game logic (movement, collisions) and UI elements, learning how to organize code for maintainability.</p>
+                        </div>
+                        
+                        <div class="learned-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h3>Performance Optimization</h3>
+                            <p>Developed awareness of performance considerations for mobile games, ensuring smooth frame rates by optimizing rendering and minimizing unnecessary computations.</p>
+                        </div>
+                        
+                        <div class="learned-card">
+                            <i class="fas fa-fingerprint"></i>
+                            <h3>Gesture Recognition</h3>
+                            <p>Implementation of complex gesture recognition systems with edge case handling and accessibility considerations.</p>
+                        </div>
+                        
+                        <div class="learned-card">
+                            <i class="fas fa-vial"></i>
+                            <h3>Testing Methodologies</h3>
+                            <p>Developed comprehensive unit tests for game logic and UI tests for gesture-based interactions.</p>
+                        </div>
+                        
+                        <div class="learned-card">
+                            <i class="fas fa-users"></i>
+                            <h3>User Experience</h3>
+                            <p>Understanding of player feedback mechanisms, difficulty, and reward systems that enhance engagement.</p>
                     </div>
                 </div>
             </div>
