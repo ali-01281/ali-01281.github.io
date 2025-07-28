@@ -21,6 +21,7 @@
             --dark: #0f172a;
             --gray: #64748b;
             --light-gray: #e2e8f0;
+            --hero-gradient: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
         }
 
         body {
@@ -95,34 +96,57 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section - UPDATED with dark blue gradient */
         .hero {
             display: flex;
             align-items: center;
             min-height: 80vh;
             padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-widget {
+            background: var(--hero-gradient);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content {
-            max-width: 600px;
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .hero-tag {
@@ -134,38 +158,64 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+            font-size: 1.1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
             padding: 0.8rem 2rem;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
         }
 
         .btn:hover {
-            background: var(--secondary);
+            background: var(--accent);
+            color: white;
             transform: translateY(-3px);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            margin-left: 1rem;
+            border: 2px solid white;
+            color: white;
         }
 
         .btn-outline:hover {
-            background: var(--primary);
-            color: white;
+            background: rgba(255, 255, 255, 0.15);
         }
 
         /* Sections */
@@ -670,12 +720,11 @@
                 display: none;
             }
             
-            .hero {
+            .hero-content {
                 text-align: center;
             }
             
             .hero-buttons {
-                display: flex;
                 flex-direction: column;
                 gap: 1rem;
             }
@@ -714,6 +763,18 @@
             .certification-card {
                 padding: 1rem;
             }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-widget {
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
@@ -736,16 +797,22 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - UPDATED with dark blue gradient -->
     <section id="home" class="hero">
-        <div class="container">
+        <div class="hero-widget">
             <div class="hero-content">
                 <span class="hero-tag">Aspiring Technology Degree Apprentice</span>
-                <h1>Ali <span>Adnan</span></h1>
+                <h1>Ali Adnan</h1>
                 <p>Passionate about software development, cybersecurity, and creating solutions that solve real-world problems. Currently developing skills and gaining experience to launch my career in technology.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn">View Projects</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    <a href="#projects" class="btn">
+                        <i class="fas fa-code"></i>
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </div>
@@ -765,13 +832,15 @@
                 </div>
                 <div class="about-image">
                     <!-- Profile picture with top cropping -->
-                    <img src="profile.jpg" alt="Ali Adnan">
+                    <div style="width:100%; height:400px; background:linear-gradient(45deg, #3b82f6, #8b5cf6); display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section - Updated with larger logos -->
+    <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Experience</h2>
@@ -779,7 +848,9 @@
                 <!-- Cisco Experience -->
                 <div class="experience-item">
                     <div class="experience-logo">
-                        <img src="cisco.jpg" alt="Cisco">
+                        <div style="width:240px; height:240px; background:#1e40af; border-radius:12px; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
                     </div>
                     <div class="experience-content">
                         <h3>Cisco Technology Work Experience</h3>
@@ -797,7 +868,9 @@
                 <!-- Sprout Experience -->
                 <div class="experience-item">
                     <div class="experience-logo">
-                        <img src="sprout.jpg.png" alt="Sprout">
+                        <div style="width:240px; height:240px; background:#10b981; border-radius:12px; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                            <i class="fas fa-bug"></i>
+                        </div>
                     </div>
                     <div class="experience-content">
                         <h3>Sprout Software Tester</h3>
@@ -817,7 +890,9 @@
                 <!-- Kainos Experience -->
                 <div class="experience-item">
                     <div class="experience-logo">
-                        <img src="kainos.jpg" alt="Kainos">
+                        <div style="width:240px; height:240px; background:#3b82f6; border-radius:12px; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                     </div>
                     <div class="experience-content">
                         <h3>Kainos CodeCamp</h3>
@@ -831,46 +906,11 @@
                         </ul>
                     </div>
                 </div>
-                
-                <!-- A&O Shearman Experience - Larger logo -->
-                <div class="experience-item">
-                    <div class="experience-logo">
-                        <img src="shearman.jpg" alt="A&O Shearman" style="max-height: 180px;">
-                    </div>
-                    <div class="experience-content">
-                        <h3>A&O Shearman - Law Work Experience</h3>
-                        <span class="experience-date">May 2025</span>
-                        <ul>
-                            <li>Despite my passion for technology, I wanted to explore legal sector to understand how tech is transforming other industries, gaining insight into A&O Shearman's use of AI across legal processes</li>
-                            <li>Discovered how A&O Shearman integrates its very own AI (called Harvey) into its legal processes, including due diligence and contract review, showcasing the firm's strong commitment to innovation</li>
-                            <li>Gained insight into core areas of law, including corporate and commercial law, and how legal teams handle complex client needs</li>
-                            <li>Observed meetings and case preparations, developing an appreciation for the precision and structure behind legal operations</li>
-                            <li>Learned the importance of client confidentiality, professional ethics, and the role of legal research in building strong cases</li>
-                            <li>Networked with legal professionals and trainees, understanding the diverse career paths within a global law firm</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Deutsche Bank Experience -->
-                <div class="experience-item">
-                    <div class="experience-logo">
-                        <img src="deutsche.jpg" alt="Deutsche Bank">
-                    </div>
-                    <div class="experience-content">
-                        <h3>Deutsche Bank Work Experience</h3>
-                        <span class="experience-date">February 2025</span>
-                        <ul>
-                            <li>Achieved 1st Place in a stock market trading simulation, where my team analysed live market data to make buy/sell decisions under time constraints, generating the highest profit recorded in the program's history</li>
-                            <li>Collaborated in a team to assess live market scenarios, applying critical thinking to assess risks and teamwork to optimise workflow efficiency</li>
-                            <li>Gained exposure to investment banking and asset management, interviewing professionals to understand global commodities and algorithmic trading strategies</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section - Updated with larger school logo -->
+    <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title">Education</h2>
@@ -878,7 +918,7 @@
                 <div class="education-card">
                     <div class="education-header">
                         <div class="education-logo">
-                            <img src="bealhigh.jpg" alt="Beal High School">
+                            <i class="fas fa-graduation-cap" style="font-size:2.5rem; color:#1e40af;"></i>
                         </div>
                         <div class="education-header-text">
                             <h3>Beal High School</h3>
@@ -887,7 +927,6 @@
                     </div>
                     <div class="education-content">
                         <div class="education-details">
-                            <!-- Location removed as requested -->
                             <p><i class="fas fa-calendar"></i> September 2019 - July 2024</p>
                         </div>
                         <div class="education-results">
@@ -908,7 +947,7 @@
                 <div class="education-card">
                     <div class="education-header">
                         <div class="education-logo">
-                            <img src="bealhigh.jpg" alt="Beal Sixth Form">
+                            <i class="fas fa-university" style="font-size:2.5rem; color:#1e40af;"></i>
                         </div>
                         <div class="education-header-text">
                             <h3>Beal Sixth Form</h3>
@@ -992,77 +1031,7 @@
         </div>
     </section>
 
-    <!-- Certifications Section - Updated with correct dates and alignment -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-container">
-                <div class="certifications-grid">
-                    <!-- KPMG Certification -->
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <img src="kpmg.jpg.jpg" alt="KPMG Cybersecurity Certificate">
-                        </div>
-                        <div class="certification-details">
-                            <h3>KPMG Cybersecurity</h3>
-                            <div class="certification-org">
-                                <i class="fas fa-building"></i> KPMG (Forage Virtual Experience)
-                            </div>
-                            <div class="certification-date">October 2024</div>
-                            <p>Conducted a cyber incident response assessment, evaluating vulnerabilities and proposing mitigation strategies for a simulated breach. Analyzed sales data using Python and Excel, transforming raw data into actionable recommendations. Designed a client-ready presentation to communicate technical findings effectively to executive audiences.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Accenture Certification -->
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <img src="accenture.jpg.jpg" alt="Accenture Data Analytics Certificate">
-                        </div>
-                        <div class="certification-details">
-                            <h3>Accenture Data Analytics</h3>
-                            <div class="certification-org">
-                                <i class="fas fa-building"></i> Accenture (Forage Virtual Experience)
-                            </div>
-                            <div class="certification-date">November 2024</div>
-                            <p>Completed a simulation focused on advising a social media client as a Data Analyst. Cleaned, modelled, and analyzed 7 datasets to uncover content trends and inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate key insights to both client and internal stakeholders.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Springpod Certification -->
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <img src="springpod.jpg" alt="Springpod Technology Certificate">
-                        </div>
-                        <div class="certification-details">
-                            <h3>Springpod Technology Program</h3>
-                            <div class="certification-org">
-                                <i class="fas fa-laptop-code"></i> Springpod
-                            </div>
-                            <div class="certification-date">October 2024</div>
-                            <p>Gained comprehensive insights into software development practices, algorithmic problem-solving techniques, and cybersecurity fundamentals. Explored real-world applications of computer science across various industries, with practical exercises in coding challenges and security vulnerability analysis.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Kodeco Certification - Updated description -->
-                    <div class="certification-card">
-                        <div class="certification-image">
-                            <img src="kodeco.png" alt="Kodeco Swift Development Certificate">
-                        </div>
-                        <div class="certification-details">
-                            <h3>Kodeco Swift Development</h3>
-                            <div class="certification-org">
-                                <i class="fab fa-apple"></i> Kodeco
-                            </div>
-                            <div class="certification-date">February 2024</div>
-                            <p>Developed foundations of iOS app development using Swift. Created a fully functional task management application with SwiftUI, implementing core programming concepts including variables, conditionals, loops, and data structures. Designed an intuitive user interface and implemented interactive features to enhance user experience.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section - Updated with requested changes -->
+    <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Skills</h2>
