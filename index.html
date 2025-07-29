@@ -16,12 +16,13 @@
         :root {
             --primary: #2563eb;
             --secondary: #1e40af;
-            --accent: #f59e0b;
+            --accent: #0d9488; /* Changed from orange to teal */
             --light: #f8fafc;
             --dark: #0f172a;
             --gray: #64748b;
             --light-gray: #e2e8f0;
             --hero-gradient: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
+            --card-gradient: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
         }
 
         body {
@@ -39,13 +40,14 @@
             padding: 0 2rem;
         }
 
-        /* Header & Navigation */
+        /* Header & Navigation - Enhanced with subtle shadow */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
         }
 
         nav {
@@ -60,6 +62,7 @@
             font-weight: 800;
             font-size: 1.8rem;
             color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -75,6 +78,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
 
         .nav-links a:hover {
@@ -84,10 +88,10 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 3px;
+            height: 2px;
             background: var(--primary);
             transition: width 0.3s ease;
         }
@@ -96,7 +100,7 @@
             width: 100%;
         }
 
-        /* Hero Section - UPDATED with dark blue gradient */
+        /* Hero Section - Refined with subtle glow */
         .hero {
             display: flex;
             align-items: center;
@@ -140,7 +144,8 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-content {
@@ -151,14 +156,15 @@
 
         .hero-tag {
             display: inline-block;
-            background: var(--accent);
+            background: var(--accent); /* Now teal */
             color: white;
             padding: 0.5rem 1.5rem;
             border-radius: 30px;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 6px rgba(13, 148, 136, 0.3); /* Teal shadow */
             font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
@@ -167,6 +173,7 @@
             line-height: 1.2;
             margin-bottom: 1.5rem;
             color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero p {
@@ -189,9 +196,9 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: white;
-            color: var(--primary);
-            padding: 0.8rem 2rem;
+            background: var(--card-gradient); /* Updated to hero gradient */
+            color: white;
+            padding: 0.9rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -199,28 +206,32 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4);
         }
 
         .btn-outline {
             background: transparent;
             border: 2px solid white;
             color: white;
+            backdrop-filter: blur(5px);
         }
 
         .btn-outline:hover {
             background: rgba(255, 255, 255, 0.15);
         }
 
-        /* Sections - ALL OTHER SECTIONS REMAIN UNCHANGED */
+        /* Sections - Enhanced with subtle background */
         section {
             padding: 6rem 0;
+            background: rgba(248, 250, 252, 0.6);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
         }
 
         .section-title {
@@ -240,10 +251,11 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--accent);
+            background: var(--accent); /* Now teal */
+            border-radius: 2px;
         }
 
-        /* About Section */
+        /* About Section - Enhanced with subtle border */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -260,6 +272,7 @@
         .about-text p {
             margin-bottom: 1.5rem;
             color: var(--gray);
+            line-height: 1.8;
         }
 
         .about-image {
@@ -271,6 +284,11 @@
             margin: 0 auto;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
             border: 3px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
         }
 
         .about-image img {
@@ -281,7 +299,7 @@
             object-position: center 30%;
         }
         
-        /* Experience Section */
+        /* Experience Section - Enhanced with subtle border */
         .experience-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -318,6 +336,11 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             background: white;
             padding: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-logo img:hover {
+            transform: scale(1.05);
         }
 
         .experience-content {
@@ -325,9 +348,15 @@
             background: white;
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             position: relative;
             z-index: 1;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-content:hover {
+            transform: translateY(-5px);
         }
 
         .experience-content h3 {
@@ -360,16 +389,17 @@
 
         .experience-content li::before {
             content: "•";
-            color: var(--primary);
+            color: var(--accent); /* Now teal */
             font-weight: bold;
             display: inline-block;
             width: 1em;
             margin-left: -1em;
             position: absolute;
             left: 0;
+            font-size: 1.2rem;
         }
 
-        /* Education Section */
+        /* Education Section - Enhanced with border */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -386,6 +416,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .education-card:hover {
@@ -397,7 +428,7 @@
             display: flex;
             align-items: center;
             padding: 1.5rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background: var(--card-gradient); /* Updated to gradient */
             color: white;
         }
 
@@ -410,6 +441,7 @@
             align-items: center;
             justify-content: center;
             margin-right: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .education-logo img {
@@ -421,11 +453,13 @@
         .education-header-text h3 {
             font-size: 1.4rem;
             margin-bottom: 0.2rem;
+            color: white;
         }
 
         .education-header-text p {
             opacity: 0.9;
             font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .education-content {
@@ -453,18 +487,20 @@
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1rem;
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .education-results h4 {
             margin-bottom: 0.5rem;
             color: var(--dark);
+            font-weight: 600;
         }
 
         .education-results p {
             margin-bottom: 0.3rem;
         }
 
-        /* Certifications Section */
+        /* Certifications Section - Enhanced with border */
         .certifications-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -486,10 +522,12 @@
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .certification-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
         .certification-image {
@@ -502,6 +540,7 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid var(--light-gray);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .certification-image img {
@@ -532,7 +571,7 @@
         }
 
         .certification-org i {
-            color: var(--accent);
+            color: var(--accent); /* Now teal */
         }
 
         .certification-date {
@@ -550,7 +589,7 @@
             line-height: 1.6;
         }
 
-        /* Projects Section */
+        /* Projects Section - Enhanced with gradient border */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -564,6 +603,18 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-gradient); /* Gradient accent line */
         }
 
         .project-card:hover {
@@ -573,7 +624,7 @@
 
         .project-image {
             height: 200px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            background: var(--card-gradient); /* Updated to gradient */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -594,6 +645,7 @@
         .project-content p {
             color: var(--gray);
             margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
 
         .project-tags {
@@ -611,7 +663,7 @@
             color: var(--gray);
         }
 
-        /* Skills Section */
+        /* Skills Section - Enhanced with border */
         .skills-container {
             max-width: 800px;
             margin: 0 auto;
@@ -631,28 +683,37 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .skill-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+            color: var(--accent); /* Now teal on hover */
         }
 
         .skill-card h3 {
             margin-bottom: 0.5rem;
         }
 
-        /* Footer */
+        /* Footer - Enhanced with top border */
         footer {
             background: var(--dark);
             color: white;
             padding: 3rem 0;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
@@ -678,11 +739,13 @@
             color: white;
             font-size: 1.5rem;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .social-links a:hover {
-            background: var(--primary);
+            background: var(--accent); /* Now teal */
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.3);
         }
 
         .copyright {
@@ -797,7 +860,7 @@
         </div>
     </header>
 
-    <!-- Hero Section - UPDATED with dark blue gradient -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-widget">
             <div class="hero-content">
@@ -818,7 +881,7 @@
         </div>
     </section>
 
-    <!-- About Section - UNCHANGED -->
+    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -838,7 +901,7 @@
         </div>
     </section>
 
-    <!-- Experience Section - UNCHANGED -->
+    <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Experience</h2>
@@ -937,7 +1000,7 @@
         </div>
     </section>
 
-    <!-- Education Section - UNCHANGED -->
+    <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title">Education</h2>
@@ -1004,21 +1067,21 @@
         </div>
     </section>
 
-    <!-- Projects Section - UNCHANGED -->
+    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(45deg, #FF9A8B, #FF6B6B);">
+                    <div class="project-image">
                         <i class="fas fa-gamepad"></i>
                     </div>
                     <div class="project-content">
                         <h3>Carrot Chase! (iOS Game)</h3>
-                        <p>A fun iOS game where players navigate a rabbit through a challenging maze to find its carrot. Developed using Swift and SwiftUI. </p>
+                        <p>A fun iOS game where players navigate a rabbit through a challenging maze to find its carrot. Developed using Swift and SwiftUI.</p>
                         <div class="project-tags">
                             <span class="project-tag">Swift</span>
-                            <span class="project-tag">SwiftUIt</span>
+                            <span class="project-tag">SwiftUI</span>
                             <span class="project-tag">iOS</span>
                             <span class="project-tag">Game Development</span>
                         </div>
@@ -1029,7 +1092,7 @@
         </div>
     </section>
 
-    <!-- Certifications Section - UNCHANGED -->
+    <!-- Certifications Section -->
     <section id="certifications" class="section">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
@@ -1056,7 +1119,7 @@
                             <img src="accenture.jpg.jpg" alt="Accenture Data Analytics Certificate">
                         </div>
                         <div class="certification-details">
-                            <h3>Accenture: Data Analytics </h3>
+                            <h3>Accenture: Data Analytics</h3>
                             <div class="certification-org">
                                 <i class="fas fa-building"></i> Accenture (Forage Virtual Experience)
                             </div>
@@ -1086,7 +1149,7 @@
                             <img src="springpod.jpg" alt="Springpod Technology Certificate">
                         </div>
                         <div class="certification-details">
-                            <h3>Springpod: Technology </h3>
+                            <h3>Springpod: Technology</h3>
                             <div class="certification-org">
                                 <i class="fas fa-laptop-code"></i> Springpod
                             </div>
@@ -1099,7 +1162,7 @@
         </div>
     </section>
 
-    <!-- Skills Section - UNCHANGED -->
+    <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Skills</h2>
@@ -1138,7 +1201,7 @@
         </div>
     </section>
 
-    <!-- Footer - UNCHANGED -->
+    <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
