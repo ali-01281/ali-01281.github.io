@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a;
-            --secondary: #1e40af;
-            --accent: #3b82f6;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --highlight: #f59e0b;
-            --success: #10b981;
+            --primary: #0f172a;      /* Deep blue */
+            --secondary: #1e40af;    /* Royal blue */
+            --accent: #0d9488;       /* Sophisticated teal */
+            --light: #f8fafc;        /* Light background */
+            --dark: #0f172a;         /* Dark text */
+            --light-gray: #e2e8f0;   /* Light gray */
             --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --teal-light: #5eead4;   /* Light teal for accents */
         }
         
         * {
@@ -40,6 +40,7 @@
             overflow: hidden;
             box-shadow: var(--card-shadow);
             margin: 30px auto;
+            border: 1px solid rgba(226, 232, 240, 0.5);
         }
         
         .hero {
@@ -132,7 +133,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 5px;
-            background: var(--highlight);
+            background: var(--accent); /* Changed to teal */
             border-radius: 5px;
         }
         
@@ -149,6 +150,7 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
+            border: 1px solid var(--light-gray);
         }
         
         .project-desc h3 {
@@ -166,7 +168,7 @@
         
         .feature-card {
             background: white;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--light-gray);
             border-radius: 12px;
             padding: 25px;
             text-align: center;
@@ -176,11 +178,12 @@
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--card-shadow);
+            border-color: var(--accent);
         }
         
         .feature-card i {
             font-size: 2.5rem;
-            color: var(--accent);
+            color: var(--accent); /* Changed to teal */
             margin-bottom: 15px;
         }
         
@@ -209,10 +212,12 @@
             height: 450px;
             display: flex;
             flex-direction: column;
+            border: 1px solid var(--light-gray);
         }
         
         .screenshot-item:hover {
             transform: scale(1.02);
+            border-color: var(--accent);
         }
         
         .screenshot-img {
@@ -226,7 +231,7 @@
         .screenshot-desc {
             padding: 20px;
             background: white;
-            border-top: 4px solid var(--accent);
+            border-top: 4px solid var(--accent); /* Changed to teal */
         }
         
         .screenshot-desc h3 {
@@ -245,6 +250,7 @@
             padding: 50px 40px;
             border-radius: 20px;
             margin: 60px 0;
+            border: 1px solid var(--light-gray);
         }
         
         .challenge-container {
@@ -260,6 +266,7 @@
             box-shadow: var(--card-shadow);
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--light-gray);
         }
         
         .challenge-card::before {
@@ -269,7 +276,7 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: var(--highlight);
+            background: var(--accent); /* Changed to teal */
         }
         
         .challenge-card h3 {
@@ -283,16 +290,16 @@
         }
         
         .solution {
-            background: rgba(59, 130, 246, 0.08);
+            background: rgba(13, 148, 136, 0.08); /* Teal background */
             padding: 15px;
             border-radius: 10px;
-            border-left: 3px solid var(--accent);
+            border-left: 3px solid var(--accent); /* Teal border */
         }
         
         .solution h4 {
             font-size: 1.1rem;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: var(--accent); /* Teal color */
         }
         
         .learned-section {
@@ -312,15 +319,17 @@
             text-align: center;
             box-shadow: var(--card-shadow);
             transition: transform 0.3s ease;
+            border: 1px solid var(--light-gray);
         }
         
         .learned-card:hover {
             transform: translateY(-10px);
+            border-color: var(--accent);
         }
         
         .learned-card i {
             font-size: 2.5rem;
-            color: var(--accent);
+            color: var(--accent); /* Changed to teal */
             margin-bottom: 20px;
         }
         
@@ -339,7 +348,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: white;
             padding: 15px 35px;
             border-radius: 50px;
@@ -348,10 +357,11 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
         .btn:hover {
-            background: var(--secondary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
         }
@@ -360,7 +370,7 @@
             text-align: center;
             padding: 30px;
             color: #64748b;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid var(--light-gray);
         }
         
         @media (max-width: 900px) {
@@ -386,6 +396,10 @@
                 font-size: 2.5rem;
             }
             
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
             .project-features {
                 grid-template-columns: 1fr;
             }
@@ -396,6 +410,14 @@
             
             .challenge-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 40px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -457,15 +479,15 @@
                 
                 <div class="screenshot-grid">
                     <div class="screenshot-item">
-                        <div class="screenshot-img" style="background-image: url('code-screenshot1.JPEG');"></div>
+                        <div class="screenshot-img" style="background-image: url('https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
                         <div class="screenshot-desc">
-                            <h3>Maze design</h3>
+                            <h3>Maze Design</h3>
                             <p>SwiftUI implementation of an emoji-based map</p>
                         </div>
                     </div>
                     
                     <div class="screenshot-item">
-                        <div class="screenshot-img" style="background-image: url('code-screenshot2.JPG');"></div>
+                        <div class="screenshot-img" style="background-image: url('https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
                         <div class="screenshot-desc">
                             <h3>Collision Detection</h3>
                             <p>Grid-based collision system for wall interactions</p>
@@ -473,7 +495,7 @@
                     </div>
                     
                     <div class="screenshot-item large">
-                        <div class="screenshot-img" style="background-image: url('game-screenshot.JPG');"></div>
+                        <div class="screenshot-img" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
                         <div class="screenshot-desc">
                             <h3>Gameplay - Rabbit finally finds its carrot!</h3>
                             <p>Final level completion with victory animation sequence</p>
@@ -491,7 +513,7 @@
                         <p>Initial implementation resulted in incorrect character animation and inconsistent grid-based movement, creating a poor user experience.</p>
                         <div class="solution">
                             <h4>Solution</h4>
-                            <p>Used @State variables playerRow and playerCol to store the player’s position and updated them using directional buttons. Each movement button changed the state by incrementing or decrementing the appropriate coordinate.</p>
+                            <p>Used @State variables playerRow and playerCol to store the player's position and updated them using directional buttons. Each movement button changed the state by incrementing or decrementing the appropriate coordinate.</p>
                         </div>
                     </div>
                     
