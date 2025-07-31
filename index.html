@@ -16,7 +16,7 @@
         :root {
             --primary: #2563eb;
             --secondary: #1e40af;
-            --accent: #0d9488; /* Changed from orange to teal */
+            --accent: #F97316; /* CHANGED TO ORANGE */
             --light: #f8fafc;
             --dark: #0f172a;
             --gray: #64748b;
@@ -156,13 +156,13 @@
 
         .hero-tag {
             display: inline-block;
-            background: var(--accent); /* Now teal */
+            background: var(--accent); /* ORANGE */
             color: white;
             padding: 0.5rem 1.5rem;
             border-radius: 30px;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(13, 148, 136, 0.3); /* Teal shadow */
+            box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3); /* ORANGE SHADOW */
             font-size: 1.1rem;
             letter-spacing: 0.5px;
         }
@@ -196,7 +196,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--card-gradient); /* Updated to hero gradient */
+            background: var(--card-gradient);
             color: white;
             padding: 0.9rem 2.2rem;
             border-radius: 50px;
@@ -251,7 +251,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--accent); /* Now teal */
+            background: var(--accent); /* ORANGE */
             border-radius: 2px;
         }
 
@@ -389,7 +389,7 @@
 
         .experience-content li::before {
             content: "•";
-            color: var(--accent); /* Now teal */
+            color: var(--accent); /* ORANGE */
             font-weight: bold;
             display: inline-block;
             width: 1em;
@@ -428,7 +428,7 @@
             display: flex;
             align-items: center;
             padding: 1.5rem;
-            background: var(--card-gradient); /* Updated to gradient */
+            background: var(--card-gradient);
             color: white;
         }
 
@@ -571,7 +571,7 @@
         }
 
         .certification-org i {
-            color: var(--accent); /* Now teal */
+            color: var(--accent); /* ORANGE */
         }
 
         .certification-date {
@@ -614,7 +614,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--card-gradient); /* Gradient accent line */
+            background: var(--card-gradient);
         }
 
         .project-card:hover {
@@ -624,7 +624,7 @@
 
         .project-image {
             height: 200px;
-            background: var(--card-gradient); /* Updated to gradient */
+            background: var(--card-gradient);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -700,7 +700,7 @@
 
         .skill-card:hover .skill-icon {
             transform: scale(1.1);
-            color: var(--accent); /* Now teal on hover */
+            color: var(--accent); /* ORANGE ON HOVER */
         }
 
         .skill-card h3 {
@@ -743,14 +743,25 @@
         }
 
         .social-links a:hover {
-            background: var(--accent); /* Now teal */
+            background: var(--accent); /* ORANGE */
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.3);
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
         }
 
         .copyright {
             color: var(--light-gray);
             font-size: 0.9rem;
+        }
+
+        /* View Projects Button - Orange Style */
+        .hero-buttons .btn:first-child {
+            background: var(--accent); /* ORANGE */
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+        }
+
+        .hero-buttons .btn:first-child:hover {
+            background: #ea580c; /* DARKER ORANGE ON HOVER */
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
         }
 
         /* Responsive Design */
