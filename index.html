@@ -16,7 +16,7 @@
         :root {
             --primary: #2563eb;
             --secondary: #1e40af;
-            --accent: #F97316; /* CHANGED TO ORANGE */
+            --accent: #F97316; /* ORANGE */
             --light: #f8fafc;
             --dark: #0f172a;
             --gray: #64748b;
@@ -156,15 +156,16 @@
 
         .hero-tag {
             display: inline-block;
-            background: var(--accent); /* ORANGE */
-            color: white;
+            background: white; /* CHANGED TO WHITE */
+            color: var(--primary); /* BLUE TEXT */
             padding: 0.5rem 1.5rem;
             border-radius: 30px;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3); /* ORANGE SHADOW */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3); /* WHITE SHADOW */
             font-size: 1.1rem;
             letter-spacing: 0.5px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
 
         .hero h1 {
@@ -196,24 +197,26 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--card-gradient);
-            color: white;
+            background: white; /* WHITE BACKGROUND */
+            color: var(--primary); /* BLUE TEXT */
             padding: 0.9rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
+            border: 2px solid var(--accent); /* ORANGE BORDER */
             cursor: pointer;
             font-size: 1rem;
-            box-shadow: 0 5px 15px rgba(15, 23, 42, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
             letter-spacing: 0.5px;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4);
+            background: var(--accent); /* ORANGE ON HOVER */
+            color: white;
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+            border-color: white;
         }
 
         .btn-outline {
@@ -753,17 +756,6 @@
             font-size: 0.9rem;
         }
 
-        /* View Projects Button - Orange Style */
-        .hero-buttons .btn:first-child {
-            background: var(--accent); /* ORANGE */
-            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
-        }
-
-        .hero-buttons .btn:first-child:hover {
-            background: #ea580c; /* DARKER ORANGE ON HOVER */
-            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
-        }
-
         /* Responsive Design */
         @media (max-width: 900px) {
             .hero h1 {
@@ -917,6 +909,42 @@
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <div class="experience-container">
+                <!-- Palantir Experience -->
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="palantir.png" alt="Palantir">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Palantir Hacking for Health Bootcamp</h3>
+                        <span class="experience-date">August 2025</span>
+                        <ul>
+                            <li>Gained hands-on experience with Palantir Foundry, cleaning and transforming healthcare datasets containing over 60,000 rows</li>
+                            <li>Built technical skills in ETL pipelines, system design, and TypeScript, applying them to solve data-driven health challenges</li>
+                            <li>Collaborated with engineers and peers during workshops, learning how to approach complex problems through teamwork and structured thinking</li>
+                            <li>Designed an interactive dashboard to present insights on vaccine rollout, making data accessible for client decision-making</li>
+                            <li>Presented our final solution to Palantir staff, communicating findings clearly and responding to questions on our approach and recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- PwC Experience -->
+                <div class="experience-item">
+                    <div class="experience-logo">
+                        <img src="pwc.png" alt="PwC">
+                    </div>
+                    <div class="experience-content">
+                        <h3>PwC Work Experience</h3>
+                        <span class="experience-date">August 2025</span>
+                        <ul>
+                            <li>Explored the work of PwC's Audit, Consulting, and Business Solutions teams, understanding how each drives impact for clients</li>
+                            <li>Learned directly from senior leaders, including UK Managing Partners, gaining career advice and perspective on success in professional services</li>
+                            <li>Developed interview and networking skills through mock interviews and workshops on personal branding and recruitment techniques</li>
+                            <li>Strengthened financial literacy by analysing client data to design effective budgeting strategies during a team task</li>
+                            <li>Delivered our final project to a panel of PwC staff, demonstrating clear communication skills whilst responding to questions and feedback in real time</li>
+                        </ul>
+                    </div>
+                </div>
+                
                 <!-- Cisco Experience -->
                 <div class="experience-item">
                     <div class="experience-logo">
